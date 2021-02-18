@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h2>Hello Bro</h2>
+<p>I am {{ author }}</p>
+
+{% if sunny %}
+<p>Sunny</p>
+{% else %}
+<p>Not sunny</p>
+{% endif %}
+
+{% endblock %}
