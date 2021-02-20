@@ -5,6 +5,8 @@ import yfinance as yf
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'pass'
 
+#NOTE, NOW THAT YOU HAVE TICKER ACCESS, SEE IF YOU CAN SUB INTO REMAINING TRADINGVIEW FUCNTIONS
+
 @app.route('/', methods=['GET','POST'])
 def mainPage():
     form = Search()
