@@ -17,7 +17,7 @@ def mainPage():
         stock = yf.Ticker(result)
         info = sorted([[k, v]for k, v in stock.info.items()])
 
-        return render_template('stockboard.html',result=info)
+        return render_template('stockboard.html',info=info,result=result)
     return render_template('mainPage.html', form = form)
 
 if __name__ =='__main__':
