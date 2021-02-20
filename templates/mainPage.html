@@ -4,12 +4,14 @@
 {% block content %}
 
 <h2>Hello Bro</h2>
-<p>I am {{ author }}</p>
 
-{% if sunny %}
-<p>Sunny</p>
-{% else %}
-<p>Not sunny</p>
-{% endif %}
+<form action="" method='POST'>
+
+    {{form.tickerSearch(size=30)}}
+    {{form.submit()}}
+    
+</form>
+
+
 
 {% endblock %}
