@@ -11,13 +11,14 @@ app.config['SECRET_KEY'] = 'pass'
 def mainPage():
     form = Search()
     if form.is_submitted():
-        result = request.form.getlist('tickerSearch')
-        result=result[0]
-
-        stock = yf.Ticker(result)
-        info = sorted([[k, v]for k, v in stock.info.items()])
-
-        return render_template('stockboard.html',info=info,result=result)
+        try:
+            result = request.form.getlist('tickerSearch')
+            result=result[0]
+            stock = yf.Ticker(result)
+            info = stock.info.items()
+            return render_template('stockboard.html',info=info,result=result)
+        except:
+            return render_template('stockboard.html')
     return render_template('mainPage.html', form = form)
 
 if __name__ =='__main__':
