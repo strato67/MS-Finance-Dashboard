@@ -4,7 +4,7 @@
 
 {% if info is defined and result is defined %}
 
-    <br>
+   
     <div class="tradingview-widget-container">
         <div id="tradingview_36b43"></div>
     
@@ -18,7 +18,7 @@
                         ]
                     ],
                     "chartOnly": false,
-                    "width": "100%",
+                    "width": "50%",
                     "height": "100%",
                     "locale": "en",
                     "colorTheme": "dark",
@@ -34,27 +34,64 @@
         </script>
     </div>
 
-    <table>
-        {% for i,j in info %}
+    <table style="width: 70%;">
+
+        <th>
+            Company Overview
+        </th>
+        
         <tr>
-            <th>
-                {{i}}
-            </th>
+            <td>About:</td>
             <td>
-                {{j}}
+                {{info[3][1]}}           
             </td>
-    
-            {% endfor %}
-    
+        
+        </tr>
+
+        <tr>
+
+            <td>Phone Number:</td>
+            <td>
+                {{info[5][1]}}
+            </td>
+
+        </tr>
+
+        <tr>
+        
+            <td>Website:</td>
+            <td>
+                {{info[9][1]}}
+            </td>
+        
         </tr>
     
     </table>
+
+    <table>
+
+        <th>
+            Financials
+        </th>
+
+
+
+
+    </table>
+
 
 {% else %}
     <h1>Sorry! Could not find the stock that you were looking for.</h1>
 
 {% endif %}
-   
-
-        
+           
 {% endblock %}
+
+<!--{% for i,j in info %}
+<tr>
+
+    <td>
+        {{info[2:5]}}
+    </td>
+
+    {% endfor %}-->

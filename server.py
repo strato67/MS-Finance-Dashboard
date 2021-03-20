@@ -16,7 +16,7 @@ app.config['SECRET_KEY'] = 'pass'
 
 def mainPage():
     form = Search()
-
+    
     if form.is_submitted():
 
         #Try catch to prevent invalid ticker searches
@@ -24,14 +24,17 @@ def mainPage():
             result = request.form.getlist('tickerSearch')
             result=result[0]
             stock = yf.Ticker(result)
-            info = stock.info.items()
-            return render_template('stockboard.html',info=info,result=result)
+            info = list(stock.info.items())
+            financials = stock.financials.items()
+
+            
+            return render_template('stockboard.html',info=info,result=result, length = len(info))
         except:
             return render_template('stockboard.html')
     return render_template('mainPage.html', form = form)
 
 if __name__ =='__main__':
     app.run()
-
-
+    msft = yf.Ticker("MSFT")
+    print(msft.financials.keys)
                                     
