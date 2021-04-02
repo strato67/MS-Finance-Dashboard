@@ -96,9 +96,10 @@ def dashboard():
             result=result[0]
             stock = yf.Ticker(result)
             info = list(stock.info.items())
-            top_headlines = str(newsapi.get_everything(q=result))
-                        
-            return render_template('stockboard.html',info=info,result=result, length = len(info), headlines = top_headlines)
+            top_headlines = newsapi.get_everything(
+                q=result, language='en', page_size=3)
+            articles = top_headlines['articles']
+            return render_template('stockboard.html',info=info,result=result, length = len(info), headlines = articles)
         except:
             return render_template('stockboard.html')
     return render_template('mainPage.html', form = form)
