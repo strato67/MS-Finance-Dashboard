@@ -12,7 +12,8 @@ import requests
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Crave123'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:/Users/mfrac/Desktop/Dashboard/mydb.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:/Users/Saaransh Sharma/Documents/Dashboard/mydb.db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:/Users/mfrac/Desktop/Dashboard/mydb.db'
 Bootstrap(app)
 db = SQLAlchemy(app)
 login_manager = LoginManager()
