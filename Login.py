@@ -9,10 +9,12 @@ from search import Search
 import yfinance as yf 
 import os
 import requests
+from newsapi.newsapi_client import NewsApiClient
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Crave123'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../Dashboard/mydb.db'
+newsapi = NewsApiClient(api_key='2472f965378e4f079bc9f24dac794181')
 
 Bootstrap(app)
 db = SQLAlchemy(app)
@@ -94,8 +96,9 @@ def dashboard():
             result=result[0]
             stock = yf.Ticker(result)
             info = list(stock.info.items())
+            top_headlines = str(newsapi.get_everything(q=result))
                         
-            return render_template('stockboard.html',info=info,result=result, length = len(info))
+            return render_template('stockboard.html',info=info,result=result, length = len(info), headlines = top_headlines)
         except:
             return render_template('stockboard.html')
     return render_template('mainPage.html', form = form)
