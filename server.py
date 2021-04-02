@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from search import Search
 import yfinance as yf 
-from newsapi import NewsApiClient
+#from newsapi import NewsApiClient
 import requests
 
 # Initialize news api and test documentation
