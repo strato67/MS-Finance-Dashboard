@@ -4,108 +4,119 @@
 
 {% if info is defined and result is defined %}
 
-   
-    <div class="tradingview-widget-container">
-        <div id="tradingview_36b43"></div>
-    
-        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-        <script type="text/javascript">
-            new TradingView.MediumWidget(
-                {
-                    "symbols": [
-                        [
-                            "{{ result }}|1D"
-                        ]
-                    ],
-                    "chartOnly": false,
-                    "width": "50%",
-                    "height": "100%",
-                    "locale": "en",
-                    "colorTheme": "dark",
-                    "gridLineColor": "#2a2e39",
-                    "trendLineColor": "#1976d2",
-                    "fontColor": "#787b86",
-                    "underLineColor": "rgba(55, 166, 239, 0.15)",
-                    "isTransparent": false,
-                    "autosize": true,
-                    "container_id": "tradingview_36b43"
-                }
-            );
-        </script>
+<div class="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4">
+    <div>
+        <div class="tradingview-widget-container">
+            <div id="tradingview_36b43"></div>
+            
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+                new TradingView.MediumWidget(
+                    {
+                        "symbols": [
+                            [
+                                "{{ result }}|1D"
+                            ]
+                        ],
+                        "chartOnly": false,
+                        "width": "600px",
+                        "height": "500px",
+                        "locale": "en",
+                        "colorTheme": "dark",
+                        "gridLineColor": "#2a2e39",
+                        "trendLineColor": "#1976d2",
+                        "fontColor": "#787b86",
+                        "underLineColor": "rgba(55, 166, 239, 0.15)",
+                        "isTransparent": false,
+                        "autosize": true,
+                        "container_id": "tradingview_36b43"
+                    }
+                );
+            </script>
+        </div>
     </div>
-    <!--TABLEAU COMPONENT BEGINS HERE-->
+    <div class="col-start-3">
+      2
+    </div>
+    <div>
+      3
+    </div>
+    <div>
+      4
+    </div>
+    <div class="row-start-1 col-start-2 col-span-2">
+        <table style="width: 70%;">
 
-
-    <table style="width: 70%;">
-
-        <th>
-            Company Overview
-        </th>
-
-        <tr>
-        
-            <td>Industry:</td>
-            <td>
-                {{info[12][1]}}
-            </td>
-        
-        </tr>
-
-        <tr>
-            <td>About:</td>
-            <td>
-                {{info[3][1]}}           
-            </td>
-        
-        </tr>
-
-        <tr>
-
-            <td>Phone Number:</td>
-            <td>
-                {{info[5][1]}}
-            </td>
-
-        </tr>
-
-        <tr>
-        
-            <td>Website:</td>
-            <td>
-                {{info[9][1]}}
-            </td>
-        
-        </tr>
-
+            <th>
+                Company Overview
+            </th>
     
-    </table>
-
-    <table>
-
-        <th>
-            Stock Information
-        </th>
-
-        <tr>
-            <td>Previous Close:</td>
-            <td>
-                {{info[13][1]}}
-            </td>
-
-
-        </tr>
-
-        <tr>
-            <td></td>
-            <td>
-                {{info[14][1]}}
-            </td>
+            <tr>
+            
+                <td>Industry:</td>
+                <td>
+                    {{info[12][1]}}
+                </td>
+            
+            </tr>
+    
+            <tr>
+                <td>About:</td>
+                <td>
+                    {{info[3][1]}}           
+                </td>
+            
+            </tr>
+    
+            <tr>
+    
+                <td>Phone Number:</td>
+                <td>
+                    {{info[5][1]}}
+                </td>
+    
+            </tr>
+    
+            <tr>
+            
+                <td>Website:</td>
+                <td>
+                    {{info[9][1]}}
+                </td>
+            
+            </tr>
+    
         
-        
-        </tr>
-
-    </table>
-
+        </table>
+    
+        <table>
+    
+            <th>
+                Stock Information
+            </th>
+    
+            <tr>
+                <td>Previous Close:</td>
+                <td>
+                    {{info[13][1]}}
+                </td>
+    
+    
+            </tr>
+    
+            <tr>
+                <td></td>
+                <td>
+                    {{info[14][1]}}
+                </td>
+            
+            
+            </tr>
+    
+        </table>
+    
+    </div>
+  </div>    
 
 {% else %}
     <h1>Sorry! Could not find the stock that you were looking for.</h1>
