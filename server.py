@@ -5,7 +5,7 @@ from newsapi import NewsApiClient
 import requests
 
 # Initialize news api and test documentation
-newsapi = NewsApiClient(api_key='2472f965378e4f079bc9f24dac794181')
+#newsapi = NewsApiClient(api_key='2472f965378e4f079bc9f24dac794181')
 
 
 app = Flask(__name__)

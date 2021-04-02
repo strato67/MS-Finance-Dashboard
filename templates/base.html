@@ -3,25 +3,30 @@
 
 <head>
     <title>MS Finance</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 
 <body>
     <div>
-        <nav class="navbar navbar-light bg-light justify-content-between">
-            <a class="navbar-brand">MS Finance</a>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#" style="position: absolute; padding-bottom: 100pt;">MS Finance</a>
+              </div>
+              <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
 
-            
-
-        </nav>
-        
-    </div>
+                  <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </div>    
     
-
-<div class="tradingview-widget-container">
-    
-    
+    <div class="tradingview-widget-container">
     <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
         async>
             {
