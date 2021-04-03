@@ -9,12 +9,12 @@ from search import Search
 import yfinance as yf 
 import os
 import requests
-from newsapi.newsapi_client import NewsApiClient
+#from newsapi.newsapi_client import NewsApiClient
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'Crave123'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../Dashboard/mydb.db'
-newsapi = NewsApiClient(api_key='2472f965378e4f079bc9f24dac794181')
+#newsapi = NewsApiClient(api_key='2472f965378e4f079bc9f24dac794181')
 
 Bootstrap(app)
 db = SQLAlchemy(app)
