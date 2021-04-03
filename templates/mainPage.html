@@ -3,14 +3,60 @@
 
 {% block content %}
 
-<h1 style="font-size: 25pt;">Enter a ticker</h1>
-
-<form action="" method='POST'>
-
-    {{form.tickerSearch(size=50)}}
-    {{form.submit()}}
+<style>
+    .content {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+    }
+    .container {
+        height: 50%;
+        position: relative;
+        
+    }
+    input[type=text] {
+        border: 2px solid rgb(0, 0, 0);
+        border-radius: 4px;
+    }
+    input[type=submit] {
+        background-color: #f8f9fb;
+        transition-duration: 0.4s;
+        border-radius: 2px;
+        padding: 8px 22px;
+        
+        
+    }
     
-</form>
+    input[type=submit]:hover {
+        background-color: rgb(224, 222, 222);
+        
+    }
+</style>
+
+
+<div class="container">
+
+
+    
+    <div class="content">
+        
+        <h1 style="font-size: 25pt;">Enter a ticker</h1>
+    
+        <form action="" method='POST' class="form-group">
+    
+            {{form.tickerSearch(size=50)}}
+            {{form.submit()}}
+    
+        </form>
+    
+    </div>
+
+</div>
+
 
 
 
