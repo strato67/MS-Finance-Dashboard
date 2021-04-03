@@ -37,6 +37,19 @@
     </div>
     <div class="col-start-3" style="border: 10pt solid black; border-radius: 25pt;" >
       
+    <div class="col-start-3" style="border: 10pt solid black; border-radius: 25pt;">
+        <ul class="list-none">
+            {% for i in range(3) %}
+            <li>{{headlines[i].items()}}</li>
+            <br>
+            {% endfor %}
+
+        </ul>
+        
+        
+        
+
+        
     </div>
     <div style="border: 10pt solid black; border-radius: 25pt;">
       3
@@ -101,6 +114,7 @@
             <td>Regular Market Open:</td>
             <td>
                 {{info[14][1]}}
+                
             </td>
                 
         </tr>
