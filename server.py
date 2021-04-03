@@ -10,5 +10,5 @@ top_headlines = newsapi.get_everything(q='tsla',language='en',page_size=3)
 
 articles = top_headlines['articles']  
 
-print(list(articles[0].values())[4])
+print(articles[0].values())
                                     

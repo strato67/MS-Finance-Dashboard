@@ -36,18 +36,18 @@
         </div>
     </div>
     <div class="col-start-3">
-        <ul class="list-none">
-            {% for i in range(3) %}
-            <li>{{headlines[i].items()}}</li>
+        <ul>
+
+            {% for i in range(5) %}
+                        
+            <li><b>{{headlines[i]["title"]}}</b></li>
+            <li>{{headlines[i]["source"]["name"]}}</li>
+            <li>{{headlines[i]["content"]}}</li>
+            <li><a href="{{headlines[i]["url"]}}" target="_blank">{{headlines[i]["url"]}}</a></li>
+
             <br>
             {% endfor %}
-
         </ul>
-        
-        
-        
-
-        
     </div>
     <div>
       3
