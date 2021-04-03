@@ -4,9 +4,9 @@
 
 {% if info is defined and result is defined %}
 
-<div class="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4">
-    <div>
-        <div class="tradingview-widget-container">
+<div class="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4" >
+    <div style="border: 10pt solid black; border-radius: 25pt; background-color: cornflowerblue;" >
+        <div class="tradingview-widget-container" style="margin-left: 25pt;">
             <div id="tradingview_36b43"></div>
             
             <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
@@ -19,8 +19,8 @@
                             ]
                         ],
                         "chartOnly": false,
-                        "width": "600px",
-                        "height": "500px",
+                        "width": "95%",
+                        "height": "100%",
                         "locale": "en",
                         "colorTheme": "dark",
                         "gridLineColor": "#2a2e39",
@@ -35,8 +35,8 @@
             </script>
         </div>
     </div>
-    <div class="col-start-3">
-        <ul>
+    <div class="col-start-3" style="border: 10pt solid black; border-radius: 25pt;">
+        <ul class="list-none">
 
             {% for i in range(5) %}
                         
@@ -49,28 +49,22 @@
             {% endfor %}
         </ul>
     </div>
-    <div>
+    <div style="border: 10pt solid black; border-radius: 25pt;">
       3
     </div>
-    <div>
+    <div style="border: 10pt solid black; border-radius: 25pt;">
       4
     </div>
-    <div class="row-start-1 col-start-2 col-span-2">
-        <table style="width: 70%;">
-
-
- 
+    <div class="row-start-1 col-start-2 col-span-2" style="border: 10pt solid black; border-radius: 25pt;">
+        <table style="width: 70%; margin-left: 225;">
             <th>
                 Company Overview
             </th>
-    
             <tr>
-            
                 <td>Industry:</td>
                 <td>
                     {{info[12][1]}}
                 </td>
-            
             </tr>
     
             <tr>
@@ -78,7 +72,6 @@
                 <td>
                     {{info[3][1]}}           
                 </td>
-            
             </tr>
     
             <tr>
@@ -101,7 +94,7 @@
     
     </table>
 
-    <table>
+    <table style="margin-left: 225px;">
 
         <th>
             Stock Information
