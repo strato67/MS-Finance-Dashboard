@@ -36,9 +36,18 @@
         </div>
     </div>
     <div class="col-start-3">
+        <ul class="list-none">
+            {% for i in range(3) %}
+            <li>{{headlines[i].items()}}</li>
+            <br>
+            {% endfor %}
+
+        </ul>
+        
+        
         
 
-        {{headlines}}
+        
     </div>
     <div>
       3
