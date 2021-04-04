@@ -5,9 +5,10 @@
 {% if info is defined and result is defined %}
 
 <body style="overflow-x: hidden;"></body>
+    <!--STOCK CHART-->
     <div class="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4" style="background-color: #1e222d;">
         <div class="row-start-1 col-start-1 col-span-2"
-            style="border: 5pt solid black; border-radius: 10pt;  background-color: #1e222d;">
+            style="border: 5pt solid #1e222d; border-radius: 10pt;  background-color: #1e222d;">
             <div class="tradingview-widget-container" style="margin-left: 25pt;">
                 <div id="tradingview_36b43"></div>
     
@@ -33,17 +34,17 @@
                 </script>
             </div>
         </div>
-        <div class="col-start-3" style="border: 5pt solid black; border-radius: 10pt; color: whitesmoke; font-size: 10pt; ">
+        <!--COMPANY NEWS-->
+        <div class="col-start-3" style="border: 5pt solid #1e222d; border-radius: 10pt; color: whitesmoke; font-size: 10pt; ">
             <ul class="list-none">
     
                 {% for i in range(5) %}
                 
                 
-                <li><b>{{headlines[i]["title"]}}</b></li>
+                <li><a href="{{headlines[i]['url']}}" target="_blank"><b>{{headlines[i]["title"]}}</b></a></li>
                 <li>{{headlines[i]["source"]["name"]}}</li>
                 <li>{{headlines[i]["content"]}}</li>
-                <li><a href="{{headlines[i]['url']}}" target="_blank">{{headlines[i]["url"]}}</a></li>
-    
+                    
                 <br>
                 {% endfor %}
             </ul>
@@ -51,7 +52,8 @@
     
     
         </div>
-        <div style="border: 5pt solid black; border-radius: 10pt; background-color: #1e222d; ">
+        <!--HEAT MAP-->
+        <div style="border: 5pt solid #1e222d; border-radius: 10pt; background-color: #1e222d; ">
             <div class='tableauPlaceholder' id='viz1617473771999' style='position: relative'>
                 <noscript><a href='#'><img alt='Stock Heat Map '
                             src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;he&#47;heatmap_16174736517950&#47;Dashboard1&#47;1_rss.png'
@@ -91,8 +93,9 @@
                 vizElement.parentNode.insertBefore(scriptElement, vizElement);
             </script>
         </div>
-        <div style="border: 5pt solid black; border-radius: 10pt; background-color: #1e222d;">
-            <!-- TradingView Widget BEGIN -->
+        <!--FINANCIALS-->
+        <div style="border: 5pt solid #1e222d; border-radius: 10pt; background-color: #1e222d;">
+            
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
     
@@ -112,8 +115,9 @@
             </div>
     
         </div>
-        <div style="border: 5pt solid black; border-radius: 10pt; ">
-            <table style="width: 70%; margin-left: 10; color:whitesmoke">
+        <!--COMPANY OVERVIEW-->
+        <div style="border: 5pt solid #1e222d; border-radius: 10pt; ">
+            <table style="width: 90%; margin-left: 10; color:whitesmoke">
                 <th>
                     Company Overview
                 </th>
@@ -144,7 +148,7 @@
     
                     <td>Website:</td>
                     <td>
-                        {{info[9][1]}}
+                        <a href="{{info[9][1]}}" target="_blank">{{info[9][1]}}</a>
                     </td>
     
                 </tr>
