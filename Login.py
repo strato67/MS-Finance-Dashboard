@@ -78,6 +78,7 @@ def signup():
         db.session.commit()
 
         return '<h1>New user has been created </h1>'
+        
     #     return '<h1>' + form.username.data + ' ' + form.password.data + ' ' + form.email.data + '</h1>'
 
     return render_template('Register.html', form=form)

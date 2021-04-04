@@ -4,8 +4,8 @@
 
 {% if info is defined and result is defined %}
 
-<div class="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4" >
-    <div style="border: 5pt solid black; border-radius: 10pt;  background-color: #1e222d;" >
+<div class="grid grid-flow-col grid-rows-2 grid-cols-3 gap-4" style="background-color: #1e222d;">
+    <div class="row-start-1 col-start-1 col-span-2" style="border: 5pt solid black; border-radius: 10pt;  background-color: #1e222d;" >
         <div class="tradingview-widget-container" style="margin-left: 25pt;">
             <div id="tradingview_36b43"></div>
             
@@ -31,7 +31,7 @@
             </script>
         </div>
     </div>
-    <div class="col-start-3" style="border: 5pt solid black; border-radius: 10pt; ">
+    <div class="col-start-3" style="border: 5pt solid black; border-radius: 10pt; color: whitesmoke; font-size: 10pt; ">
         <ul class="list-none">
 
             {% for i in range(5) %}
@@ -104,8 +104,8 @@
         </div>
        
     </div>
-    <div class="row-start-1 col-start-2 col-span-2" style="border: 5pt solid black; border-radius: 10pt; ">
-        <table style="width: 70%; margin-left: 225;">
+    <div  style="border: 5pt solid black; border-radius: 10pt; ">
+        <table style="width: 70%; margin-left: 10; color:whitesmoke" >
             <th>
                 Company Overview
             </th>
@@ -143,49 +143,7 @@
     
     </table>
 
-    <table style="margin-left: 225px;">
-
-        <th>
-            Stock Information
-        </th>
-
-        <tr>
-            <td>Previous Close:</td>
-            <td>
-                {{info[13][1]}}
-            </td>
-
-        </tr>
-
-        <tr>
-            <td>Regular Market Open:</td>
-            <td>
-                {{info[14][1]}}
-                
-            </td>
-                
-        </tr>
-
-        <tr>
-            <td>Dividend Rate:</td>
-            <td>
-                {{info[32][1]}}%
-            </td>
-        
-        </tr>
-
-        <tr>
-            <td>Volume:</td>
-            <td>
-                {{info[54][1]}} shares
-            </td>
-        
-        </tr>
-
-
-    </table>
-
-
+   
 {% else %}
     <h1>Sorry! Could not find the stock that you were looking for.</h1>
 

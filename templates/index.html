@@ -1,8 +1,5 @@
 {% extends "bootstrap/base.html" %}
 
-{% block title %}
-Demo App
-{% endblock %}
 
 {% block styles %}
 {{super()}}
@@ -10,6 +7,7 @@ Demo App
 {% endblock %}
 
 {% block content %}
+<body style="background-color: #1e222d;">
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -33,10 +31,12 @@ Demo App
 
     <div class="container">
 
-      <div class="starter-template">
+      <div class="starter-template" style="color: whitesmoke;">
         <h1>Bootstrap starter template</h1>
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
       </div>
 
     </div><!-- /.container -->
+</body>
 {% endblock %}
+
