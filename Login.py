@@ -103,8 +103,6 @@ def dashboard():
         except:
             return render_template('stockboard.html')
     return render_template('mainPage.html', form = form)
-
-
     
     # return render_template('dashboard.html', name = current_user.username)
 
@@ -116,11 +114,3 @@ def logout():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-    """url = ('https://newsapi.org/v2/everything?'
-           'q=Apple&'
-           'from=2021-03-21&'
-           'sortBy=popularity&'
-           'apiKey=2472f965378e4f079bc9f24dac794181')
-    response = requests.get(url)
-    print (response.json())"""
