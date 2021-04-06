@@ -50,7 +50,19 @@ class Search(FlaskForm):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    form = LoginForm()    
+    #test that form submits
+    if form.validate_on_submit(): 
+        user = User.query.filter_by(username = form.username.data).first()
+        if user:
+            if user.password == form.password.data:
+                login_user(user, remember = form.remember.data)
+                return redirect(url_for('dashboard'))
+        return '<h1>Invalid username/password </h1>'
+    #     return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
+
+
+    return render_template('index.html',form=form)
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
@@ -75,8 +87,8 @@ def signup():
         new_user = User(username = form.username.data, email = form.email.data, password = form.password.data)
         db.session.add(new_user)
         db.session.commit()
-
-        return '<h1>New user has been created </h1>'
+        
+        return redirect(url_for('index'))
         
     #     return '<h1>' + form.username.data + ' ' + form.password.data + ' ' + form.email.data + '</h1>'
 
