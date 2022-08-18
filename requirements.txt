@@ -13,7 +13,7 @@ greenlet==1.0.0
 idna==2.10
 itsdangerous==1.1.0
 Jinja2==2.11.3
-lxml==4.6.3
+lxml==4.9.1
 MarkupSafe==1.1.1
 multitasking==0.0.9
 newsapi==0.1.1
